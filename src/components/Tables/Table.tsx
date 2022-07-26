@@ -2,10 +2,12 @@ import React from 'react'
 import HeaderTable from './HeaderTable'
 import TableBody from './TableBody'
 import TableHead from './TableHead'
-import TablePages from './TablePages'
 
 
 const Table = () => {
+
+
+
   return (
     <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
       <div className="py-8">
@@ -25,16 +27,12 @@ const Table = () => {
                 fourth='Campaña'
               />
 
-              <TableBody
-                name='Juan Perez'
-                employeeNumber='12345'
-                branch='Sucursal 1'
-                campaign='Campaña 1'
-              />
+
+              <TableBody />
 
             </table>
 
-            {/* <TablePages /> */}
+
           </div>
         </div>
       </div>
