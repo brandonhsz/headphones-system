@@ -1,45 +1,39 @@
 import React from 'react'
+import Th from './Th'
 
 interface IProps {
   first: string
   second: string
   third: string
   fourth: string
+  fiveth: string
+
 }
 
-const TableHead = ({ first, second, third, fourth }: IProps) => {
+const TableHead = ({ first, second, third, fourth, fiveth }: IProps) => {
   return (
     <>
       <thead>
         <tr>
-          <th
-            scope="col"
-            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-          >
+          <Th>
             {first}
-          </th>
-          <th
-            scope="col"
-            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-          >
+          </Th>
+
+          <Th>
             {second}
-          </th>
-          <th
-            scope="col"
-            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-          >
+          </Th>
+
+          <Th>
             {third}
-          </th>
-          <th
-            scope="col"
-            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-          >
+          </Th>
+
+          <Th>
             {fourth}
-          </th>
-          <th
-            scope="col"
-            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-          ></th>
+          </Th>
+
+          <Th>
+            {fiveth}
+          </Th>
         </tr>
       </thead>
     </>

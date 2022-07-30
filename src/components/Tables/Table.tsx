@@ -25,6 +25,7 @@ const Table = () => {
                 second='N.Empleado'
                 third='Sucursal'
                 fourth='Campaña'
+                fiveth='serial'
               />
 
 

@@ -6,22 +6,27 @@ import TableItem from './TableItem'
 
 const TableBody = () => {
 
-  const { dataFiltered, filter } = useDataStore()
+  const { dataFiltered } = useDataStore()
   console.log(dataFiltered);
   return (
     <tbody>
 
       {
         dataFiltered.length === 0 ?
-          (<h2>No hay Diademas</h2>)
+          (<tr>
+            <td>
+              <h2>No hay Diademas</h2>
+            </td>
+          </tr>)
           :
           dataFiltered.map((item: any, index) => (
             <TableItem
               key={index}
               name={item.name}
-              employeeNumber={item.id}
+              employeeNumber={item.employeeId}
               branch={'branch'}
               campaign={'campaign'}
+              serialNumber={item.headPhone.serialNumber}
             />
           ))
       }
