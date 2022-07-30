@@ -32,7 +32,9 @@ export const useDataStore = create<IDataStore>((set) => ({
 
   dataFilter: () => set(state => ({
     dataFiltered: state.data.filter((item: any) =>
-      item.name.toLowerCase().includes(state.filter.toLowerCase())
+      item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
+      item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
+      item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())
     )
   }))
 }));

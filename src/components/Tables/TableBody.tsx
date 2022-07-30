@@ -24,8 +24,8 @@ const TableBody = () => {
               key={index}
               name={item.name}
               employeeNumber={item.employeeId}
-              branch={'branch'}
-              campaign={'campaign'}
+              branch={item.branch}
+              campaign={item.campaign}
               serialNumber={item.headPhone.serialNumber}
             />
           ))
