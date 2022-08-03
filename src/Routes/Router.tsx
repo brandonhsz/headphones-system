@@ -6,6 +6,7 @@ import {
   Route,
 } from 'react-router-dom'
 import Actives from '../pages/Actives'
+import Add from '../pages/Add'
 import Bajas from '../pages/Bajas'
 
 const Router = () => {
@@ -14,6 +15,7 @@ const Router = () => {
       <Routes>
         <Route path="/active" element={<Actives />} />
         <Route path="/bajas" element={<Bajas />} />
+        <Route path="/" element={<Add />} />
       </Routes>
     </BrowserRouter>
   )

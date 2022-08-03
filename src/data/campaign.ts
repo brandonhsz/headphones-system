@@ -1,0 +1,12 @@
+export const campaigns = [
+  'BALANCE TRANSFER',
+  'MERCADO ABIERTO',
+  'VALIDACION',
+  'MONITOREO',
+  'PPM',
+  'LEC',
+  'DERIVACIONES LEC',
+  'DERIVACIONES BALANCE',
+  'RH',
+  'FORMALIZACION',
+]
