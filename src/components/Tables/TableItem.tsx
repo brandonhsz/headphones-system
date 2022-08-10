@@ -5,7 +5,7 @@ interface IProps {
   employeeNumber: string
   branch: string
   campaign: string
-  serialNumber: string
+  serialNumber: string | any
 }
 
 const TableItem = ({ name = '', employeeNumber = '', branch = '', campaign = '', serialNumber = 'undefined' }: IProps) => {

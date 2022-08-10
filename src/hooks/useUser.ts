@@ -34,7 +34,7 @@ const useUser = () => {
       }
     }
 
-    const response = await fetch('http://localhost:8081/users', {
+    const response = await fetch('http://10.9.2.234:8081/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -25,8 +25,9 @@ export const useDataStore = create<IDataStore>((set) => ({
   }),
 
   fetch: async () => {
-    const response = await fetch("http://localhost:8081/users");
+    const response = await fetch("http://10.9.2.234:8081/users");
     const data = await response.json();
+    // console.log(data)
     set(state => ({ data, dataFiltered: data }));
   },
 

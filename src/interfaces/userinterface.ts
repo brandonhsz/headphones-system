@@ -6,5 +6,10 @@ export interface IUser {
   serialNumber: string;
   campaign: string;
   branch: string;
-  headPhone: string;
+  headPhone: {
+    serialNumber: string;
+    description: string;
+    active: boolean;
+    type: string;
+  };
 } 

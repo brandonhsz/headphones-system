@@ -1,6 +1,3 @@
-export interface IDataInterface {
-  name: string;
-  employeeId: string;
-  office: string;
-  campaign: string;
-}
+import { IUser } from "./userinterface";
+
+export interface IDataInterface extends IUser { }

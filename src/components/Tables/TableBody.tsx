@@ -1,4 +1,5 @@
 import React from 'react'
+import { IUser } from '../../interfaces/userinterface'
 import { useDataStore } from '../../stores/data.store'
 import TableItem from './TableItem'
 
@@ -7,7 +8,7 @@ import TableItem from './TableItem'
 const TableBody = () => {
 
   const { dataFiltered } = useDataStore()
-
+  console.log(dataFiltered[0]?.headPhone);
   return (
     <tbody>
 
@@ -19,14 +20,14 @@ const TableBody = () => {
             </td>
           </tr>)
           :
-          dataFiltered.map((item: any, index) => (
+          dataFiltered.map((item: IUser, index) => (
             <TableItem
               key={index}
               name={item.name}
               employeeNumber={item.employeeId}
               branch={item.branch}
               campaign={item.campaign}
-              serialNumber={item.headPhone.serialNumber}
+              serialNumber={item?.headPhone?.serialNumber}
             />
           ))
       }
