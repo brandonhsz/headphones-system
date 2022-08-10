@@ -81,7 +81,7 @@ const NewUser = () => {
         name='headPhone'
         id='headPhone'
         className='text-center mb-6 p-2 text-black rounded-xl'
-        value={user?.headPhone}
+        value={user?.headPhone.type}
         onChange={(e) => handleChange(e)}
       >
         <option disabled value='' >--SELECCIONE UNA DIADEMA--</option>

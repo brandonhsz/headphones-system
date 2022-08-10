@@ -10,7 +10,12 @@ const useUser = () => {
     serialNumber: '',
     campaign: '',
     branch: '',
-    headPhone: ''
+    headPhone: {
+      serialNumber: '',
+      description: '',
+      active: false,
+      type: ''
+    }
   })
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -49,7 +54,12 @@ const useUser = () => {
       serialNumber: '',
       campaign: '',
       branch: '',
-      headPhone: ''
+      headPhone: {
+        serialNumber: '',
+        description: '',
+        active: false,
+        type: ''
+      }
     })
 
   }
