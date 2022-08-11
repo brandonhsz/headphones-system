@@ -3,6 +3,5 @@ export const headPhones = [
   'Logi',
   'Logitech',
   'Plantronics',
-  'Administrativo',
   'Otro',
 ]
