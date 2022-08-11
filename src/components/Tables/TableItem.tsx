@@ -5,13 +5,16 @@ interface IProps {
   employeeNumber: string
   branch: string
   campaign: string
-  serialNumber: string | any
+  serialNumber: string
 }
 
 const TableItem = ({ name = '', employeeNumber = '', branch = '', campaign = '', serialNumber = 'undefined' }: IProps) => {
   return (
     <>
-      <tr className='hover:'>
+      <tr
+        className='hover:cursor-pointer'
+        onClick={() => { console.log('click'); }}
+      >
         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
           <div className="flex items-center">
             <div className="ml-3">

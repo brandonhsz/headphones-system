@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { IUser } from '../interfaces/userinterface'
+import { toastNotify } from '../libs/toast'
 
 const useUser = () => {
 
@@ -47,6 +48,9 @@ const useUser = () => {
       body: JSON.stringify(bodyData)
     })
     const data = await response.json()
+    console.log(response.status);
+    if (response.status === 201) toastNotify('Usuario agregado correctamente', 'success')
+    else toastNotify('Error al agregar usuario', 'error')
     setUser({
       name: '',
       employeeId: '',
