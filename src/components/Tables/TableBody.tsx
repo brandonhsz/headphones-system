@@ -8,7 +8,7 @@ import TableItem from './TableItem'
 const TableBody = () => {
 
   const { dataFiltered } = useDataStore()
-  console.log(dataFiltered[0]?.headPhone);
+
   return (
     <tbody>
 

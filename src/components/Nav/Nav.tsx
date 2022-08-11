@@ -16,12 +16,17 @@ const Nav = () => {
 
                   <NavItem
                     title='Diademas Activas'
-                    link="/active"
+                    link="/"
                   />
 
                   <NavItem
                     title='Diademas Bajas'
                     link="/bajas"
+                  />
+
+                  <NavItem
+                    title='Agregar Usuario'
+                    link="/add"
                   />
 
                 </div>
