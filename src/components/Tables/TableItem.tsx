@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import MoreInfoTable from './MoreInfoTable'
 
 interface IProps {
   name: string
@@ -6,14 +7,17 @@ interface IProps {
   branch: string
   campaign: string
   serialNumber: string
+  index: number
 }
 
-const TableItem = ({ name = '', employeeNumber = '', branch = '', campaign = '', serialNumber = 'undefined' }: IProps) => {
+const TableItem = ({ name = '', employeeNumber = '', branch = '', campaign = '', serialNumber = 'undefined', index }: IProps) => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <>
       <tr
         className='hover:cursor-pointer'
-        onClick={() => { console.log('click'); }}
+        onClick={() => { setIsOpen(!isOpen) }}
       >
         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
           <div className="flex items-center">
@@ -40,8 +44,11 @@ const TableItem = ({ name = '', employeeNumber = '', branch = '', campaign = '',
         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
           <p className="text-gray-900 whitespace-no-wrap font-black">{serialNumber}</p>
         </td>
-
       </tr>
+
+      {
+        isOpen && <MoreInfoTable index={index} />
+      }
     </>
   )
 }

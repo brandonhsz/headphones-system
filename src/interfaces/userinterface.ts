@@ -6,6 +6,7 @@ export interface IUser {
   serialNumber: string;
   campaign: string;
   branch: string;
+  status?: boolean
   headPhone: {
     serialNumber: string;
     description: string;

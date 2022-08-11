@@ -28,6 +28,7 @@ const TableBody = () => {
               branch={item.branch}
               campaign={item.campaign}
               serialNumber={item?.headPhone?.serialNumber}
+              index={index}
             />
           ))
       }
