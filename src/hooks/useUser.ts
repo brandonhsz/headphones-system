@@ -40,7 +40,7 @@ const useUser = () => {
       }
     }
 
-    const response = await fetch('http://10.9.2.234:8081/users', {
+    const response = await fetch(import.meta.env.VITE_BACK, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

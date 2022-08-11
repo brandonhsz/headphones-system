@@ -25,7 +25,7 @@ export const useDataStore = create<IDataStore>((set) => ({
   }),
 
   fetch: async () => {
-    const response = await fetch("http://10.9.2.234:8081/users");
+    const response = await fetch(import.meta.env.VITE_BACK);
     const data = await response.json();
     set(state => ({ data, dataFiltered: data }));
   },
