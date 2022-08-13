@@ -9,5 +9,6 @@ export const campaigns = [
   'DERIVACIONES BALANCE',
   'RH',
   'FORMALIZACION',
-  'ADMINISTRATIVO'
+  'ADMINISTRATIVO',
+  'SANTANDER',
 ]
