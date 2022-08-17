@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  const { data, fetch } = useDataStore()
+  const { fetch } = useDataStore()
 
   useEffect(() => {
     fetch()
