@@ -2,7 +2,8 @@ import create from "zustand";
 import { IDataInterface } from "../interfaces/dataInterface"
 
 interface IDataStore {
-  data: IDataInterface[]
+  dataActive: IDataInterface[]
+  dataInactive: IDataInterface[]
   dataFiltered: IDataInterface[]
   filter: string
 
@@ -12,7 +13,8 @@ interface IDataStore {
 }
 
 export const useDataStore = create<IDataStore>((set) => ({
-  data: [],
+  dataActive: [],
+  dataInactive: [],
   dataFiltered: [],
   filter: '',
 
@@ -27,11 +29,19 @@ export const useDataStore = create<IDataStore>((set) => ({
   fetch: async () => {
     const response = await fetch(import.meta.env.VITE_BACK);
     const data = await response.json();
-    set(state => ({ data, dataFiltered: data }));
+    const active = data.filter((item: any) => item.status);
+    data.map((item: any) => {
+      console.log(typeof item.status);
+    })
+    set(state => ({
+      dataActive: active,
+      dataInactive: active,
+      dataFiltered: data
+    }));
   },
 
   dataFilter: () => set(state => ({
-    dataFiltered: state.data.filter((item: any) =>
+    dataFiltered: state.dataActive.filter((item: any) =>
       item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())

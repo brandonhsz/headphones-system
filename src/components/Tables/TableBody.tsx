@@ -5,22 +5,22 @@ import TableItem from './TableItem'
 
 
 
-const TableBody = () => {
+const TableBody = ({ data }: any) => {
 
-  const { dataFiltered } = useDataStore()
+
 
   return (
     <tbody>
 
       {
-        dataFiltered.length === 0 ?
+        data.length === 0 ?
           (<tr>
             <td>
               <h2>No hay Diademas</h2>
             </td>
           </tr>)
           :
-          dataFiltered.map((item: IUser, index) => (
+          data.map((item: IUser, index: number) => (
             <TableItem
               key={index}
               name={item.name}
