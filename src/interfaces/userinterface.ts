@@ -13,4 +13,5 @@ export interface IUser {
     active: boolean;
     type: string;
   };
+  createdAt?: string;
 } 
