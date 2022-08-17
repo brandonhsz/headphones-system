@@ -19,10 +19,6 @@ const MoreInfoTable = ({ index }: { index: number }) => {
       </td>
 
       <td className='bg-gray-600 rounded-sm p-5'>
-        <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Descripcion: <span>{description}</span></p>
-      </td>
-
-      <td className='bg-gray-600 rounded-sm p-5'>
         <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Type: <span>{type}</span></p>
       </td>
 
