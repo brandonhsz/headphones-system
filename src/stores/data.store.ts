@@ -30,12 +30,13 @@ export const useDataStore = create<IDataStore>((set) => ({
     const response = await fetch(import.meta.env.VITE_BACK);
     const data = await response.json();
     const active = data.filter((item: any) => item.status);
+    const inactive = data.filter((item: any) => !item.status);
     data.map((item: any) => {
       console.log(typeof item.status);
     })
     set(state => ({
       dataActive: active,
-      dataInactive: active,
+      dataInactive: inactive,
       dataFiltered: data
     }));
   },

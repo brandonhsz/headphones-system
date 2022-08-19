@@ -47,7 +47,10 @@ const TableItem = ({ name = '', employeeNumber = '', branch = '', campaign = '',
       </tr>
 
       {
-        isOpen && <MoreInfoTable index={index} />
+        isOpen &&
+        <MoreInfoTable
+          employeeNumber={employeeNumber}
+        />
       }
     </>
   )

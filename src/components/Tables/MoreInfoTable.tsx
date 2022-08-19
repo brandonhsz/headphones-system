@@ -7,15 +7,21 @@ import timezone from 'dayjs/plugin/timezone'
 dayjs.extend(timezone)
 dayjs.extend(utc)
 
-const MoreInfoTable = ({ index }: { index: number }) => {
+interface IProps {
+  employeeNumber: string
+}
+
+const MoreInfoTable = ({ employeeNumber }: IProps) => {
 
   const { dataFiltered } = useDataStore()
-  const { status, createdAt } = dataFiltered[index]
-  const { description, type } = dataFiltered[index].headPhone
+  const user: any = dataFiltered.find(({ employeeId }) => employeeId === employeeNumber)
+  const { status, createdAt } = user
+  const { description, type } = user.headPhone
 
   const timeDay = dayjs(createdAt).utc().format('YYYY-MM-DD')
   const time = dayjs(createdAt).format('HH:mm:ss')
 
+  console.log(user)
   return (
     <tr className=''>
 
