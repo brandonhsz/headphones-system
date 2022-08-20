@@ -11,7 +11,7 @@ const Actives = () => {
 
   return (
     <div>
-      <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
+      <div className="container mx-auto max-w-3xl">
         <div className="py-8">
 
           <HeaderTable
