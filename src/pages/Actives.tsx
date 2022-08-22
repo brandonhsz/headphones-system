@@ -1,4 +1,5 @@
 import React from 'react'
+import Spinner from '../components/Spinners/Spinner'
 import HeaderTable from '../components/Tables/HeaderTable'
 
 import TableBody from '../components/Tables/TableBody'
@@ -11,7 +12,7 @@ const Actives = () => {
 
   return (
     <div>
-      <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
+      <div className="container mx-auto max-w-3xl">
         <div className="py-8">
 
           <HeaderTable
@@ -30,11 +31,9 @@ const Actives = () => {
                   fiveth='serial'
                 />
 
-
                 <TableBody
                   data={dataFiltered}
                 />
-
               </table>
 
 
