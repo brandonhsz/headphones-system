@@ -26,6 +26,11 @@ const useUser = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    if (user.name === '' || user.employeeId === '' || user.description === '' || user.serialNumber === '' || user.campaign === '' || user.branch === '' || user.headPhone.serialNumber === '' || user.headPhone.description === '' || user.headPhone.type === '') {
+      toastNotify('Please fill all fields', 'error')
+      return
+    }
+
     const bodyData = {
       name: user.name,
       employeeId: user.employeeId,
@@ -47,7 +52,7 @@ const useUser = () => {
       },
       body: JSON.stringify(bodyData)
     })
-    const data = await response.json()
+
     console.log(response.status);
     if (response.status === 201) toastNotify('Usuario agregado correctamente', 'success')
     else toastNotify('Error al agregar usuario', 'error')

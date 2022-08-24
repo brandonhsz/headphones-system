@@ -8,6 +8,7 @@ interface IProps {
 const HeaderTable = ({ title }: IProps) => {
 
   const { setFilter, filter } = useDataStore()
+
   return (
     <>
       <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
@@ -20,6 +21,7 @@ const HeaderTable = ({ title }: IProps) => {
                 id='"form-subscribe-Filter'
                 className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 placeholder={'Search'}
+                value={filter.toUpperCase()}
                 onChange={(e) => setFilter(e.target.value)}
 
               />

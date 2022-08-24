@@ -1,5 +1,7 @@
 import create from "zustand";
 import { IDataInterface } from "../interfaces/dataInterface"
+import { IUser } from "../interfaces/userinterface";
+import { fetchData } from "../libs/fetching";
 
 interface IDataStore {
   data: IDataInterface[];
@@ -31,13 +33,10 @@ export const useDataStore = create<IDataStore>((set) => ({
   }),
 
   fetch: async () => {
-    const response = await fetch(import.meta.env.VITE_BACK);
-    const data = await response.json();
-    const active = data.filter((item: any) => item.status);
-    const inactive = data.filter((item: any) => !item.status);
-    data.map((item: any) => {
-      console.log(typeof item.status);
-    })
+    const data = await fetchData(import.meta.env.VITE_BACK);
+    const active = data.filter((item: IUser) => item.status);
+    const inactive = data.filter((item: IUser) => !item.status);
+
     set(state => ({
       dataActive: active,
       dataInactive: inactive,
@@ -48,15 +47,15 @@ export const useDataStore = create<IDataStore>((set) => ({
   },
 
   dataFilter: () => set(state => ({
-    dataFilteredActive: state.dataActive.filter((item: any) =>
+    dataFilteredActive: state.dataActive.filter((item: IUser) =>
       item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())
     ),
-    dataFilteredInactive: state.dataInactive.filter((item: any) =>
+    dataFilteredInactive: state.dataInactive.filter((item: IUser) =>
       item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())
-    )
+    ),
   }))
 }));

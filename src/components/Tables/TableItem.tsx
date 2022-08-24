@@ -15,6 +15,7 @@ const TableItem = ({ name = '', employeeNumber = '', branch = '', campaign = '',
 
   return (
     <>
+
       <tr
         className='hover:cursor-pointer'
         onClick={() => { setIsOpen(!isOpen) }}

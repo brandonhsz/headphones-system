@@ -21,6 +21,8 @@ const TableBody = ({ data }: any) => {
           </tr>)
           :
           data.map((item: IUser, index: number) => (
+
+
             <TableItem
               key={index}
               name={item.name}
@@ -30,6 +32,8 @@ const TableBody = ({ data }: any) => {
               serialNumber={item?.headPhone?.serialNumber}
               index={index}
             />
+
+
           ))
       }
 

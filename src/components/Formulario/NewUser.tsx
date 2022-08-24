@@ -18,7 +18,7 @@ const NewUser = () => {
         name='name'
         className='mb-6 p-1 rounded-xl text-black'
         placeholder='Nombre'
-        value={user?.name}
+        value={user?.name.toUpperCase()}
         onChange={(e) => handleChange(e)}
       />
 
@@ -35,7 +35,7 @@ const NewUser = () => {
         name='description'
         className='mb-6 p-1 rounded-xl text-black'
         placeholder='Descripcion de Diadema'
-        value={user?.description}
+        value={user?.description.toUpperCase()}
         onChange={(e) => handleChange(e)}
       />
       <input
