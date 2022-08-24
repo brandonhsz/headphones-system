@@ -2,6 +2,7 @@ import create from "zustand";
 import { IDataInterface } from "../interfaces/dataInterface"
 
 interface IDataStore {
+  data: IDataInterface[];
   dataActive: IDataInterface[]
   dataInactive: IDataInterface[]
   dataFilteredActive: IDataInterface[]
@@ -14,6 +15,7 @@ interface IDataStore {
 }
 
 export const useDataStore = create<IDataStore>((set) => ({
+  data: [],
   dataActive: [],
   dataInactive: [],
   dataFilteredActive: [],
@@ -40,7 +42,8 @@ export const useDataStore = create<IDataStore>((set) => ({
       dataActive: active,
       dataInactive: inactive,
       dataFilteredActive: active,
-      dataFilteredInactive: inactive
+      dataFilteredInactive: inactive,
+      data: data
     }));
   },
 

@@ -13,8 +13,8 @@ interface IProps {
 
 const MoreInfoTable = ({ employeeNumber }: IProps) => {
 
-  const { dataFiltered } = useDataStore()
-  const user: any = dataFiltered.find(({ employeeId }) => employeeId === employeeNumber)
+  const { data } = useDataStore()
+  const user: any = data.find(({ employeeId }) => employeeId === employeeNumber)
   const { status, createdAt } = user
   const { description, type } = user.headPhone
 
