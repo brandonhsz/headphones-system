@@ -6,7 +6,7 @@ import { useDataStore } from '../stores/data.store'
 
 const Bajas = () => {
 
-  const { dataInactive } = useDataStore()
+  const { dataFilteredInactive } = useDataStore()
 
   return (
     <div>
@@ -31,7 +31,7 @@ const Bajas = () => {
 
 
                 <TableBody
-                  data={dataInactive}
+                  data={dataFilteredInactive}
                 />
 
               </table>

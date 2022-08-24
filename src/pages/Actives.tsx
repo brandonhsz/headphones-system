@@ -8,7 +8,7 @@ import { useDataStore } from '../stores/data.store'
 
 const Actives = () => {
 
-  const { dataFiltered } = useDataStore()
+  const { dataFilteredActive } = useDataStore()
 
   return (
     <div>
@@ -32,7 +32,7 @@ const Actives = () => {
                 />
 
                 <TableBody
-                  data={dataFiltered}
+                  data={dataFilteredActive}
                 />
               </table>
 

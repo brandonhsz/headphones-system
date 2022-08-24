@@ -4,7 +4,8 @@ import { IDataInterface } from "../interfaces/dataInterface"
 interface IDataStore {
   dataActive: IDataInterface[]
   dataInactive: IDataInterface[]
-  dataFiltered: IDataInterface[]
+  dataFilteredActive: IDataInterface[]
+  dataFilteredInactive: IDataInterface[]
   filter: string
 
   setFilter: (filter: string) => void
@@ -15,7 +16,8 @@ interface IDataStore {
 export const useDataStore = create<IDataStore>((set) => ({
   dataActive: [],
   dataInactive: [],
-  dataFiltered: [],
+  dataFilteredActive: [],
+  dataFilteredInactive: [],
   filter: '',
 
   setFilter: (filter: string) => set((state) => {
@@ -37,12 +39,18 @@ export const useDataStore = create<IDataStore>((set) => ({
     set(state => ({
       dataActive: active,
       dataInactive: inactive,
-      dataFiltered: data
+      dataFilteredActive: active,
+      dataFilteredInactive: inactive
     }));
   },
 
   dataFilter: () => set(state => ({
-    dataFiltered: state.dataActive.filter((item: any) =>
+    dataFilteredActive: state.dataActive.filter((item: any) =>
+      item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
+      item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
+      item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())
+    ),
+    dataFilteredInactive: state.dataInactive.filter((item: any) =>
       item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())
