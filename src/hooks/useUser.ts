@@ -26,10 +26,10 @@ const useUser = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (user.name === '' || user.employeeId === '' || user.description === '' || user.serialNumber === '' || user.campaign === '' || user.branch === '' || user.headPhone.serialNumber === '' || user.headPhone.description === '' || user.headPhone.type === '') {
-      toastNotify('Please fill all fields', 'error')
-      return
-    }
+    // if (user.name === '' || user.employeeId === '' || user.description === '' || user.serialNumber === '' || user.campaign === '' || user.branch === '' || user.headPhone.serialNumber === '' || user.headPhone.description === '' || user.headPhone.type === '') {
+    //   toastNotify('Please fill all fields', 'error')
+    //   return
+    // }
 
     const bodyData = {
       name: user.name,
@@ -54,8 +54,18 @@ const useUser = () => {
     })
 
     console.log(response.status);
-    if (response.status === 201) toastNotify('Usuario agregado correctamente', 'success')
-    else toastNotify('Error al agregar usuario', 'error')
+    if (response.status === 201) {
+      toastNotify('Usuario agregado correctamente', 'success')
+      return;
+    }
+    else if (response.status === 400) {
+      toastNotify('Todos los campos son requeridos', 'error')
+      return;
+    }
+    else {
+      toastNotify('Error al agregar usuario', 'error')
+      return;
+    }
     setUser({
       name: '',
       employeeId: '',
