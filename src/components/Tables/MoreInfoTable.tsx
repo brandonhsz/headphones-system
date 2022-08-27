@@ -38,11 +38,11 @@ const MoreInfoTable = ({ employeeNumber }: IProps) => {
       </td>
 
       <td className='bg-gray-200 rounded-sm p-5'>
-        <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Diadema: <span>{status ? 'Activa' : 'Baja'}</span></p>
+        <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Fecha <span>{timeDay}</span> <span>{time}</span> </p>
       </td>
 
-      <td className='bg-gray-200 rounded-sm p-5'>
-        <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Fecha <span>{timeDay}</span> <span>{time}</span> </p>
+      <td className='bg-gray-200 rounded-sm p-5 hover:bg-gray-400 hover:cursor-pointer'>
+        <p className="font-extrabold whitespace-no-wrap text-center text-sm flex flex-col text-black">EDITAR USUARIO</p>
       </td>
     </tr>
   )
