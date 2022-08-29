@@ -9,6 +9,7 @@ import Spinner from '../components/Spinners/Spinner'
 import Actives from '../pages/Actives'
 import Add from '../pages/Add'
 import Bajas from '../pages/Bajas'
+import Edit from '../pages/Edit'
 import { useDataStore } from '../stores/data.store'
 
 const Router = () => {
@@ -22,6 +23,7 @@ const Router = () => {
         <Route path="/bajas" element={dataActive.length > 0 ? <Bajas /> : <Spinner />} />
         <Route path="/" element={dataActive.length > 0 ? <Actives /> : <Spinner />} />
         <Route path="/add" element={<Add />} />
+        <Route path="/edit/:id" element={<Edit />} />
       </Routes>
     </BrowserRouter>
   )

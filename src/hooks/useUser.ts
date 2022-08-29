@@ -86,7 +86,8 @@ const useUser = () => {
   return {
     user,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    setUser
   }
 }
 
