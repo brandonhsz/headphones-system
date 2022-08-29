@@ -4,11 +4,13 @@ import { branches, campaigns, headPhones } from '../data'
 import useUser from '../hooks/useUser'
 import { fetchData } from '../libs/fetching'
 import { toastNotify } from '../libs/toast';
+import { useDataStore } from '../stores/data.store';
 
 const Edit = () => {
 
   const { id } = useParams()
   const navigate = useNavigate()
+  const { setReset } = useDataStore()
   const [user, setUser] = useState({
     name: '',
     employeeId: '',
@@ -46,7 +48,10 @@ const Edit = () => {
       },
       body: JSON.stringify(dataToSend)
     }).then(res => res.status === 200 ? toastNotify('Usuario Modificado', 'success') : toastNotify('Error', 'error'))
-      .then(() => navigate('/'))
+      .then(() => {
+        navigate('/')
+        setReset()
+      })
   }
 
   useEffect(() => {

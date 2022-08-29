@@ -44,11 +44,11 @@ const MoreInfoTable = ({ employeeNumber }: IProps) => {
         <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Fecha <span>{timeDay}</span> <span>{time}</span> </p>
       </td>
 
-      <td className='bg-gray-200 rounded-sm p-5 hover:bg-gray-400 hover:cursor-pointer'>
-        <p
-          className="font-extrabold whitespace-no-wrap text-center text-sm flex flex-col text-black"
-          onClick={() => navigate(`/edit/${_id}`)}
-        >EDITAR USUARIO</p>
+      <td
+        className='bg-gray-200 rounded-sm p-5 hover:bg-gray-400 hover:cursor-pointer'
+        onClick={() => navigate(`/edit/${_id}`)}
+      >
+        <p className="font-extrabold whitespace-no-wrap text-center text-sm flex flex-col text-black">EDITAR USUARIO</p>
       </td>
     </tr>
   )

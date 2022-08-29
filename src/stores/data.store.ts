@@ -4,6 +4,7 @@ import { IUser } from "../interfaces/userinterface";
 import { fetchData } from "../libs/fetching";
 
 interface IDataStore {
+  reset: boolean,
   data: IDataInterface[];
   dataActive: IDataInterface[]
   dataInactive: IDataInterface[]
@@ -12,17 +13,21 @@ interface IDataStore {
   filter: string
 
   setFilter: (filter: string) => void
+  setReset: () => void
   dataFilter: () => void
   fetch: () => void
 }
 
 export const useDataStore = create<IDataStore>((set) => ({
+  reset: false,
   data: [],
   dataActive: [],
   dataInactive: [],
   dataFilteredActive: [],
   dataFilteredInactive: [],
   filter: '',
+
+  setReset: () => set(state => ({ reset: !state.reset })),
 
   setFilter: (filter: string) => set((state) => {
     console.log(`setFilter: ${filter}`)
