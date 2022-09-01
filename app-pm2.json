@@ -2,8 +2,10 @@
   "apps": [
     {
       "name": "diademas",
-      "script": "yarn",
-      "args": "dev"
+      "script": "serve dist 2022 --spa --watch",
+      "env": {
+        "VITE_BACK": "http://10.9.2.181:2021/users"
+      }
     }
   ]
 }
