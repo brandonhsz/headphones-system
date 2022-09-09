@@ -10,7 +10,10 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #6b21a8;
+  background: linear-gradient(180deg, #111827 0%, #581c87 100%);
+  /* background-image: linear-gradient(to bottom right, #6b21a8); */
+  /* background-image: url(./assets/5.png); */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

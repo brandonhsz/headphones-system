@@ -16,7 +16,7 @@ const App = () => {
   }, [reset])
 
   return (
-    <div className='bg-purple-900 top-0 left-0 bg-gradient-to-br from-gray-900 via-gray-900 to-purple-800 bottom-0 leading-5 h-screen w-full'>
+    <div className='bottom-0 leading-5 h-screen w-full'>
       <Header />
       <Router />
       <ToastContainer />

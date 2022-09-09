@@ -11,7 +11,7 @@ const NewUser = () => {
   return (
     <form
       // className='flex flex-col w-1/2 mx-auto mt-10 border border-gray-400 rounded-lg p-4'
-      className='p-12 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-900 mx-auto rounded-3xl w-4/6 '
+      className='mt-10 p-12 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-900 mx-auto rounded-3xl w-4/6 '
       onSubmit={handleSubmit}
     >
 
