@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 import { useNavigate } from 'react-router-dom'
+import { getTime } from '../../libs/getTime'
 
 dayjs.extend(timezone)
 dayjs.extend(utc)
@@ -18,13 +19,13 @@ const MoreInfoTable = ({ employeeNumber }: IProps) => {
 
   const { data } = useDataStore()
   const user: any = data.find(({ employeeId }) => employeeId === employeeNumber)
-  const { status, createdAt, _id } = user
+  const { status, createdAt, updatedAt, _id } = user
   const { description, type } = user.headPhone
 
-  const timeDay = dayjs(createdAt).utc().format('YYYY-MM-DD')
-  const time = dayjs(createdAt).format('HH:mm:ss')
+  const created = getTime(createdAt)
+  const updated = getTime(updatedAt)
 
-  console.log(user)
+  console.log(created)
   return (
     <tr className=''>
 
@@ -41,7 +42,8 @@ const MoreInfoTable = ({ employeeNumber }: IProps) => {
       </td>
 
       <td className='bg-gray-200 rounded-sm p-5'>
-        <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Fecha <span>{timeDay}</span> <span>{time}</span> </p>
+        <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black mb-2">Creado: <span>{created.day}</span> <span>{created.time}</span> </p>
+        <p className="font-bold whitespace-no-wrap text-center text-sm flex flex-col text-black">Modificado: <span>{updated.day}</span> <span>{updated.time}</span> </p>
       </td>
 
       <td

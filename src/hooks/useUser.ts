@@ -31,6 +31,11 @@ const useUser = () => {
       return
     }
 
+    if (typeof user.employeeId !== 'number') {
+      toastNotify('El campo "Numero de empleado" no admite caracteres distintos a numeros', 'error')
+      return
+    }
+
     const bodyData = {
       name: user.name,
       employeeId: user.employeeId,
