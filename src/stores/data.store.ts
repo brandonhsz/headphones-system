@@ -55,12 +55,14 @@ export const useDataStore = create<IDataStore>((set) => ({
     dataFilteredActive: state.dataActive.filter((item: IUser) =>
       item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
-      item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())
+      item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase()) ||
+      item.campaign.toLowerCase().includes(state.filter.toLowerCase())
     ),
     dataFilteredInactive: state.dataInactive.filter((item: IUser) =>
       item.name.toLowerCase().includes(state.filter.toLowerCase()) ||
       item.employeeId.toLowerCase().includes(state.filter.toLowerCase()) ||
-      item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase())
+      item.headPhone.serialNumber.toLowerCase().includes(state.filter.toLowerCase()) ||
+      item.campaign.toLowerCase().includes(state.filter.toLowerCase())
     ),
   }))
 }));

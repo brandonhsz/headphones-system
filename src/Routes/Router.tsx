@@ -9,6 +9,7 @@ import Spinner from '../components/Spinners/Spinner'
 import Actives from '../pages/Actives'
 import Add from '../pages/Add'
 import Bajas from '../pages/Bajas'
+import Busquedas from '../pages/Busquedas'
 import Edit from '../pages/Edit'
 import NotFound from '../pages/NotFound'
 import Stock from '../pages/Stock'
@@ -27,6 +28,7 @@ const Router = () => {
         <Route path="/add" element={<Add />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/stock" element={<Stock />} />
+        <Route path="/busqueda" element={<Busquedas />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
