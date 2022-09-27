@@ -29,6 +29,11 @@ const Nav = () => {
                     link="/add"
                   />
 
+                  <NavItem
+                    title='Busqueda'
+                    link="/busqueda"
+                  />
+
                   {/* <NavItem
                     title='Stock Diademas'
                     link="/stock"
