@@ -12,4 +12,5 @@ export const campaigns = [
   'ADMINISTRATIVO',
   'SANTANDER',
   'ROYAL PRESTIGE',
+  'EXPO CHINA'
 ]

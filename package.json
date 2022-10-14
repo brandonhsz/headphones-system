@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start:prod": "pm2 serve dist 8082 --watch --name diademas-react"
   },
   "dependencies": {
     "dayjs": "^1.11.5",

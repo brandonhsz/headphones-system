@@ -16,7 +16,7 @@ const useSearchNumbers = () => {
 
     data.map((item) => {
       search.map((number) => {
-        if (item.employeeId === number) {
+        if (item.employeeId === number && item.campaign === 'BALANCE TRANSFER') {
           coincidence.push(item)
         }
       })
